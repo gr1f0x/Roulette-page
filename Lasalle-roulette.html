@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaSalle Rulette</title>
+    <link rel="stylesheet" href="lasalle-roulette.css">
+</head>
+<body>
+
+    <!-- Header y Navegación -->
+    <header>
+        <div class="logo">
+            <h1>LaSalleBet</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#juegos">Juegos</a></li>
+                <li><a href="#promociones">Promociones</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="user-info">
+            <span class="user-name">Bienvenido, <strong id="user-name">SNZ</strong></span>
+            <span class="user-credit">Crédito: <strong id="user-credit">€<span id="chips-value">0</span></strong></span>
+        </div>
+    </header>
+
+    <!-- Contenedor de la ruleta -->
+    <div class="ruleta-container">
+        <img id="ruleta" src="img/pngwing.com (8).png" alt="Ruleta">
+        <button id="girar-btn">Girar Ruleta</button>
+    </div>
+    
+
+    <!-- Resultado de la ruleta -->
+    <p id="result">Número de la ruleta: </p>
+
+    <!-- Tabla de apuestas en un contenedor ovalado -->
+    <div class="tablero-container">
+        <div class="tablero-apuestas">
+            <!-- Números del 0 al 36 -->
+            <div class="apuesta cero" data-value="0">0</div>
+            <div class="apuesta rojo" data-value="3">3</div>
+            <div class="apuesta negro" data-value="6">6</div>
+            <div class="apuesta rojo" data-value="9">9</div>
+            <div class="apuesta rojo" data-value="12">12</div>
+            <div class="apuesta negro" data-value="15">15</div>
+            <div class="apuesta rojo" data-value="18">18</div>
+            <div class="apuesta rojo" data-value="21">21</div>
+            <div class="apuesta negro" data-value="24">24</div>
+            <div class="apuesta rojo" data-value="27">27</div>
+            <div class="apuesta rojo" data-value="30">30</div>
+            <div class="apuesta negro" data-value="33">33</div>
+            <div class="apuesta rojo" data-value="36">36</div>
+            <div class="apuesta negro" data-value="2">2</div>
+            <div class="apuesta rojo" data-value="5">5</div>
+            <div class="apuesta negro" data-value="8">8</div>
+            <div class="apuesta negro" data-value="11">11</div>
+            <div class="apuesta rojo" data-value="14">14</div>
+            <div class="apuesta negro" data-value="17">17</div>
+            <div class="apuesta negro" data-value="20">20</div>
+            <div class="apuesta rojo" data-value="23">23</div>
+            <div class="apuesta negro" data-value="26">26</div>
+            <div class="apuesta negro" data-value="29">29</div>
+            <div class="apuesta rojo" data-value="32">32</div>
+            <div class="apuesta negro" data-value="35">35</div>
+            <div class="apuesta rojo" data-value="1">1</div>
+            <div class="apuesta negro" data-value="4">4</div>
+            <div class="apuesta rojo" data-value="7">7</div>
+            <div class="apuesta negro" data-value="10">10</div>
+            <div class="apuesta negro" data-value="13">13</div>
+            <div class="apuesta rojo" data-value="16">16</div>
+            <div class="apuesta rojo" data-value="19">19</div>
+            <div class="apuesta negro" data-value="22">22</div>
+            <div class="apuesta rojo" data-value="25">25</div>
+            <div class="apuesta negro" data-value="28">28</div>
+            <div class="apuesta negro" data-value="31">31</div>
+            <div class="apuesta rojo" data-value="34">34</div>
+        </div>
+
+        <!-- Opciones de apuestas en la misma línea -->
+        <div class="opciones-apuestas">
+            <div class="apuesta especial" data-apuesta="pares">Pares</div>
+            <div class="apuesta especial" data-apuesta="impares">Impares</div>
+            <div class="apuesta especial rojo" data-apuesta="rojo">Rojo</div>
+            <div class="apuesta especial negro" data-apuesta="negro">Negro</div>
+            <div class="apuesta especial" data-apuesta="bajos">1-18</div>
+            <div class="apuesta especial" data-apuesta="altos">19-36</div>
+        </div>
+    </div>
+
+    <!-- Sección de fichas con imágenes (ahora con draggable) -->
+    <div class="fichas">
+        <div class="ficha-container">
+            <img class="ficha" src="img/una_ficha_de_casino_sin_fondo_con_un_contorno_azul_que_sea_de_mi_casino_LaSalle_Bet_y_que_tenga_un_diseño_original-removebg-preview.png" data-value="1" alt="Ficha de 1€">
+            <span class="ficha-value">1€</span>
+        </div>
+        <div class="ficha-container">
+            <img class="ficha" src="img/una_ficha_de_casino_verde_de_LaSalle_Bet__de_frente__sin_fondo-removebg-preview.png" data-value="2" alt="Ficha de 2€">
+            <span class="ficha-value">2€</span>
+        </div>
+        <div class="ficha-container">
+            <img class="ficha" src="img/una_moneda_de_casino_de_color_naranja_con_un_diseño_bonito_de_frente_y_sin_fondo-removebg-preview.png" data-value="5" alt="Ficha de 5€">
+            <span class="ficha-value">5€</span>
+        </div>
+        <div class="ficha-container">
+            <img class="ficha" src="img/una_ficha_de_casino_sin_fondo_con_un_contorno_rojo_que_sea_de_mi_casino_LaSalle_Bet_y_que_tenga_un_diseño_original-removebg-preview.png" data-value="10" alt="Ficha de 10€">
+            <span class="ficha-value">10€</span>
+        </div>
+        <div class="ficha-container">
+            <img class="ficha" src="img/una_ficha_de_casino_de_LaSalle_Bet__sin_fondo_y_de_frente__en_color_rosa-removebg-preview.png" data-value="20" alt="Ficha de 20€">
+            <span class="ficha-value">20€</span>
+        </div>
+        <div class="ficha-container">
+            <img class="ficha" src="img/una_ficha_de_casino_amarilla_de_LaSalle_Bet__sin_fondo_y_de_frente-removebg-preview.png" data-value="50" alt="Ficha de 50€">
+            <span class="ficha-value">50€</span>
+        </div>
+        <div class="ficha-container">
+            <img class="ficha" src="img/una_ficha_de_casino_de_LaSalle_Bet__sin_fondo_y_de_frente__en_color_negro-removebg-preview.png" data-value="100" alt="Ficha de 100€">
+            <span class="ficha-value">100€</span>
+        </div>
+        <div class="ficha-container">
+            <img class="ficha" src="img/una_ficha_de_casino_de_LaSalle_Bet__sin_fondo_y_de_frente__en_color_lila-removebg-preview.png" data-value="500" alt="Ficha de 500€">
+            <span class="ficha-value">500€</span>
+        </div>
+    </div>
+    
+
+    <script src="lasalle-roulette.js"></script>
+</body>
+</html>

@@ -1,0 +1,276 @@
+/* Estilos básicos del casino */
+a {
+    text-decoration: none;
+    color: #ff0019;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #301818;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el Header */
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 10px;
+    width: 100vw;
+    background-color: #222;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.logo h1 {
+    font-size: 50px;
+    color: #ff0037;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.user-info {
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.user-name,
+.user-credit {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
+.user-credit {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ff0015;
+}
+
+.user-credit:hover {
+    background-color: rgba(255, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo de la ruleta */
+.ruleta-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 20px;
+}
+.gif-background {
+    position: absolute; /* Posiciona el GIF de manera absoluta */
+    top: 0; /* Coloca el GIF en la parte superior del contenedor */
+    left: 0; /* Coloca el GIF en la parte izquierda del contenedor */
+    width: 100%; /* Hace que el GIF ocupe todo el ancho del contenedor */
+    height: 100%; /* Hace que el GIF ocupe todo el alto del contenedor */
+    object-fit: cover; /* Ajusta la imagen para cubrir el área sin deformarse */
+    z-index: 1; /* Coloca el GIF detrás de la ruleta */
+}
+
+#ruleta {
+    width: 100%;
+    border-radius: 100%;
+    transition: transform 4s ease-out;
+    margin-top: 10px;
+}
+
+/* Botón de girar */
+#girar-btn {
+    position: absolute;
+    bottom: -490px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: gold;
+    border: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+#girar-btn:hover {
+    background-color: darkorange;
+}
+
+/* Contenedor ovalado para la tabla de apuestas */
+.tablero-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+/* Tabla de apuestas */
+.tablero-apuestas {
+    display: grid;
+    grid-template-columns: repeat(13, 60px);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.apuesta {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.apuesta:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.apuesta.rojo {
+    background-color: red;
+}
+
+.apuesta.negro {
+    background-color: black;
+    color: white;
+}
+
+.apuesta.cero {
+    background-color: green;
+    width: 60px;
+    height: 195px;
+    color: white;
+    grid-column: span 1;
+    grid-row: span 3;
+}
+
+/* Opciones de apuestas */
+.opciones-apuestas {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.apuesta.especial {
+    padding: 10px 20px;
+    background-color: #322f2f;
+    border-radius: 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.apuesta.especial:hover {
+    background-color: #3498db;
+}
+
+.apuesta.especial.rojo {
+    padding: 10px 60px;
+    background-color: red;
+}
+
+.apuesta.especial.negro {
+    padding: 10px 60px;
+    background-color: black;
+}
+
+/* Sección de fichas */
+.fichas {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.ficha-container {
+    display: flex;
+    flex-direction: column; /* Coloca la imagen y el valor en columna */
+    align-items: center; /* Centra horizontalmente el contenido */
+    text-align: center; /* Centra el texto del valor */
+}
+
+.ficha {
+    width: 130px;
+    height: 130px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.ficha:hover {
+    border-radius: 1000px;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+.ficha-value {
+    font-weight: bold; /* Hacer el valor más audaz */
+    color: #333; /* Color del texto */
+    background-color: white; /* Fondo ligero */
+    padding: 5px 10px; /* Espaciado alrededor del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Transición suave para el color de fondo */
+}
+
+.ficha-value:hover {
+    background-color: rgba(230, 33, 33, 0.9); /* Color de fondo al pasar el ratón */
+}
+
+/* Estilos para la sección de apuestas */
+.chips-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#add-chips {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#add-chips-btn {
+    padding: 10px 20px;
+    background-color: #ff002f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#add-chips-btn:hover {
+    background-color: #ff3358;
+}
+
